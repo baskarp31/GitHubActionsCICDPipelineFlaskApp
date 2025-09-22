@@ -49,7 +49,7 @@ jobs:
         run: |
           echo "Deploying to staging environment..."
           # Example: deploy via SSH          
-          git pull origin staging
+          git pull origin staging          
           
 
   deploy-production:
@@ -64,4 +64,5 @@ jobs:
         run: |
           echo "Deploying to production environment..."          
           git pull origin main
+
           
