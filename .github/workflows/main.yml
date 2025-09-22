@@ -49,8 +49,7 @@ jobs:
         run: |
           echo "Deploying to staging environment..."
           # Example: deploy via SSH          
-          git pull origin staging
-          systemctl restart flask-staging.service
+          git pull origin staging          
           EOF
 
   deploy-production:
@@ -64,6 +63,5 @@ jobs:
       - name: Deploy to Production
         run: |
           echo "Deploying to production environment..."          
-          git pull origin main
-          systemctl restart flask.service
+          git pull origin main          
           EOF
