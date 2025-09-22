@@ -48,9 +48,7 @@ jobs:
       - name: Deploy to Staging
         run: |
           echo "Deploying to staging environment..."
-          # Example: deploy via SSH
-          ssh -o StrictHostKeyChecking=no ${{ secrets.STAGING_USER }}@${{ secrets.STAGING_HOST }} << 'EOF'
-          cd /var/www/staging-app
+          # Example: deploy via SSH          
           git pull origin staging
           systemctl restart flask-staging.service
           EOF
@@ -65,9 +63,7 @@ jobs:
 
       - name: Deploy to Production
         run: |
-          echo "Deploying to production environment..."
-          ssh -o StrictHostKeyChecking=no ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }} << 'EOF'
-          cd /var/www/prod-app
+          echo "Deploying to production environment..."          
           git pull origin main
           systemctl restart flask.service
           EOF
