@@ -10,7 +10,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                //checkout scm
+                git branch: 'main', url: 'https://github.com/baskarp31/GitHubActionsCICDPipelineFlaskApp.git'
             }
         }
 
